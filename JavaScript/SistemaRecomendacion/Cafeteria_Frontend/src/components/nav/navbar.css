@@ -1,0 +1,73 @@
+/* Alineamos los elementos del contenedor en forma de fila */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Agregamos espacio entre los elementos del contenedor NAV, establecemos un color de fondo blanco y un efecto de sombra */
+nav {
+  justify-content: space-between;
+  padding: 4px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* Alineamos los elementos del DIV, un icono y un texto, al centro en el eje vertical */
+div {
+  align-items: center;
+}
+
+/* Agregamos espacio entre el icono y el SPAN, aumentamos el tamaño de fuente y el groso de la letra */
+span {
+  padding-left: 8px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+/* Ajustamos el tamaño del icono */
+img {
+  width: 40px;
+}
+
+/* Agreamos espacio entre las letras y entre palabras de los elementos LI y SPAN */
+li,
+span {
+  word-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+/* Eliminamos los iconos que aparecen a un lado de cada elemento de la lista, asi como la sangria */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Agregamos espacio entre los elementos de la lista y aumentamos su tamaño de fuente */
+li {
+  padding-right: 16px;
+  font-size: large;
+}
+
+/*
+  Convertimos a negrita el texto del link que este activo (cuando el usuario esta en la misma pagina a la que apunta
+  el elemento link)
+*/
+.active {
+  font-weight: bold;
+}
+
+/* Cuando el ancho de la pagina es menor a 370 pixeles el CSS dentro se aplica */
+@media (width < 370px) {
+  /* Ocultamos el elemento SPAN para ahorrar espacio, solo mostramos el icono */
+  span {
+    display: none;
+  }
+}
+
+/* Cuando el ancho de la pagina es menor a 250 pixeles el CSS dentro se aplica */
+@media (width < 250px) {
+  /* Reducimos el espacio entre los elementos LI para ahorrar espacio */
+  li {
+    padding-right: 8px;
+  }
+}

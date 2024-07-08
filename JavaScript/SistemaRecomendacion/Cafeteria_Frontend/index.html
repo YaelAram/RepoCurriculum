@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <!--
+      ## Tecnologias utilizadas
+
+      - NodeJS 18.14.0 (Entorno de ejecución de JavaScript)
+      - YARN 1.22.19 (Manejador de paquetes de JavaScript)
+      - Vite 4.4.5 (Empaquetador de nuestra aplicacion)
+      - TypeScript 5.0.2 (Super set de JavaScript)
+    -->
+    <!-- 
+      Definimos aqui nuestro web component nav-bar, este contiene la barra de navegacion de nuesta pagina, a diferencia
+      de los web components de las paginas, este lo definimos aqui ya que la barra de navegacion esta presente sin importar
+      la pagina (es un contenido que no cambia a diferencia de la pagina que cambia segun la ruta actual) 
+    -->
+    <nav-bar></nav-bar>
+    <!-- Este elemento main sera donde el contenido de nuestras paginas sera inserta -->
+    <main id="app"></main>
+    <!-- Importamos el main.ts (el archivo principal) de nuestra aplicacion que carga el router -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

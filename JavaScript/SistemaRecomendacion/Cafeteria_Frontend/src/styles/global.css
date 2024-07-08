@@ -1,0 +1,109 @@
+/* Agegamos un poco de espacio entre las letras y entre las palabras, para evitar que el texto se vea tan junto */
+h1,
+span,
+button,
+select,
+option,
+input,
+label,
+th,
+td {
+  word-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+/* Centramos el contenido de todas las etiquetas H1, son el titulo principal de cada pagina */
+h1 {
+  text-align: center;
+}
+
+/* Reducimos el espacio que hay entre un elemento H4 y el contenido arriba y debajo suyo */
+h4 {
+  margin-block: 4px;
+}
+
+/* Con esta clase redondeamos los bordes de un elemento HTML */
+.rounded {
+  border-radius: 0.5em;
+}
+
+/* Agregamos un efecto de sombra */
+.shadow {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+/* 
+  Definimos el estilo de todos los botones de la pagina, el color de fondo sera el mismo que el del fondo,
+  agregamos mas espacio entre el texto y los bordes del boton, cambiamos el color del texto y del borde del boton,
+  cambiamos el tamaño de fuente y la forma del cursor que tendra cuando el mouse este sobre el boton
+*/
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #1a1a1a;
+  border-radius: 0.5em;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  outline: none;
+  padding: 0.5em;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+/* Cuando el boton este desactivado mostrara un color mas opaco al normal y el curso cambiara a un icono de prohibido */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cuando el mouse esta sobre el boton este cambiara su color de fondo a negro, su color de fuente a blanco y tendra sombra */
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  color: white;
+  background-color: #1a1a1a;
+}
+
+/* AL dar click sobre el boton este hara un ligero movimiento hacia arriba sobre el eje Z */
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* 
+  Estos estilos se aplican sobre un DIV, lo modifican de tal forma que se vea como un cuadro de notificacion flotante
+*/
+.box {
+  width: 500px;
+  overflow: hidden;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 12px 16px 16px;
+  text-align: center;
+}
+
+/* Este estilo esta activo cuando no se requiere mostrar el cuadro de notificacion, oculta la notificacion */
+.hiddenBox {
+  display: none;
+}
+
+/* Este estilo esta activo cuando se requiere mostrar el cuadro de notificacion, muestra la notificacion */
+.visibleBox {
+  display: block;
+}

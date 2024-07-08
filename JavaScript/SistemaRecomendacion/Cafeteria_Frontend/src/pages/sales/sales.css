@@ -1,0 +1,52 @@
+/* Ajustamos el espacio entre el elemento H1 y los elementos arriba y debajo de el */
+h1 {
+  margin-block: 24px 16px;
+}
+
+/*
+  Centramos el contenido de la pagina horizontal y verticalmente, tambien agregamos espacio respecto al elemento
+  H1 que se encuentra encima de este y agregamos espacio entre el contenido del elemento SECTION y los bordes de este
+*/
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 24px;
+  padding: 16px;
+}
+
+/* Aumentamos el tamaño de fuente y el grosor de la letra, agregamos espacio en el lado derecho e izquierdo */
+span {
+  margin: 0 24px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* Agregamos espacio entre los bordes de la tabla y el contenido */
+table {
+  margin: 24px;
+  padding: 0 12px 12px;
+}
+
+/* Aplicamos un color gris claro sobre las filas pares de la tabla para facilitar su lectura */
+table tr:nth-child(even) {
+  background-color: #cbcbcb;
+}
+
+/* Centramos el contenido de las celdas de la tabla y agregamos espacio entre el texto y los bordes de las celdas */
+th,
+td {
+  padding: 8px 16px;
+  text-align: center;
+}
+
+/* Aumentamos el tamaño de fuente de los titulos de cada columna */
+th {
+  font-size: x-large;
+}
+
+/* Aumentamos el tamaño de fuente de las celdas que contienen la informacion del registro de venta */
+td {
+  font-size: large;
+}

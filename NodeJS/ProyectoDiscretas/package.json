@@ -1,0 +1,34 @@
+{
+  "name": "proyectodiscretas",
+  "version": "0.1.0",
+  "description": "Creacion de un chat bot sencillo a traves de un grafo/arbol de desiciones para realizar la compra de uno o mas libros",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaelAram/ProyectoDiscretas.git"
+  },
+  "keywords": [
+    "ChatBot",
+    "Grafos",
+    "Arbol",
+    "Automatizar",
+    "Compra",
+    "Libros"
+  ],
+  "author": "Yael Castillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YaelAram/ProyectoDiscretas/issues"
+  },
+  "homepage": "https://github.com/YaelAram/ProyectoDiscretas#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "inquirer": "^8.2.4",
+    "mongoose": "^6.3.3"
+  }
+}

@@ -1,0 +1,106 @@
+/* Centramos horizontal y verticalmente los elementos del contenedor, los elementos se alinean en forma de columna */
+.vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 32px;
+}
+
+/* Centramos horizontal y verticalmente los elementos del contenedor, los elementos se alinean en forma de fila */
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Weather Section */
+/* Alinea los elementos del div en forma horizontal */
+div {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Agrega espacio debajo de los elementos span */
+span {
+  margin-bottom: 12px;
+}
+
+/* Ajusta el tamaño del icono de clima */
+.weather-icon {
+  width: 150px;
+}
+
+/* Alinea al centro del contenedor el boton para recargar el estado del clima */
+.reload-btn {
+  align-self: center;
+  width: 200px;
+}
+
+/* Form Section */
+/* Aumenta el espacio encima del contenedor */
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* Cambia el estilo de fuente para los elementos LABEL y agrega un poc de espacio para los elementos debajo de el */
+label {
+  font-style: italic;
+  margin-bottom: 4px;
+}
+/* Agrega espacio (en la parte superior, inferior y lateral) entre los elementos dentro del DIV */
+.btn-div {
+  gap: 8px;
+}
+
+/* 
+  Cambia el tamaño de fuente del elemento INPUT, alinea el texto que introcude el usuario al centro, elimina el
+  borde del INPUT cuando es seleccionado y aplica un borde color negro solido de 2px de ancho
+*/
+input {
+  font-size: large;
+  text-align: center;
+  padding: 4px 8px;
+  outline: none;
+  border: 2px solid black;
+}
+
+/* Los siguientes dos bloques de reglas eliminan los botones para aumentar o dismiuir el numero en un input de tipo number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+/* Drink Section */
+/* Elimina la separacion respecto a los elementos arriba de los elementos H2 y H3, pero lo mantiene en la parte inferior  */
+h2,
+h3 {
+  margin-block: 0 12px;
+}
+
+/* Agrega espacio de sepacion entre el contenedor y el borde final de la pagina */
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* Asigna el tamaño del icono de la bebida recomendada */
+.drink-icon {
+  width: 60px;
+  margin-bottom: 8px;
+}
+
+/* Agrega separacion entre el boton para comparar una bebida fria y el boton para comprar una bebida caliente */
+.buy-cold {
+  margin-right: 8px;
+}
