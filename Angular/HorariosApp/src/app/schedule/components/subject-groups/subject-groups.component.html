@@ -1,0 +1,46 @@
+<!-- Creamos una lista no ordenada para la lista de materias -->
+<ul>
+  <!-- 
+    Iteramos sobre la lista de materias seleccionadas por el usuario, donde la variable subjects
+    hace referencia al getter del mismo nombre en el componente de TypeScript y se utiliza el pipe de 
+    Angular keyvalue para obtener el arreglo de entradas del Map. La variable subject contiene la lista
+    de grupos que comparten el mismo nombre de materia, por ejemplo, la materia de IA se imparte en el grupo
+    1957, 1958 y 1959, si el usuario selecciona IA en los grupos 1957 y 1958, el arreglo contendra dos elementos.
+  -->
+  <li *ngFor="let subject of subjects | keyvalue">
+    <!-- 
+      La propiedad key de subject contiene el nombre de la materia, usamos el pipe de Angular titlecase
+      que capitaliza cada palabra y las demas letras son convertidas a minusculas.
+    -->
+    <h3 class="bold">{{ subject.key | titlecase }}</h3>
+    <!-- Creamos una lista no ordenada para los grupos -->
+    <ul>
+      <!-- Iteramos sobre la lista de grupos -->
+      <li
+        *ngFor="let group of subject.value"
+        class="flex space-between align-center gap-16"
+      >
+        <!-- Creamos un label para el campo de texto de tipo numerico con el nombre del profesor y grupo -->
+        <label [for]="group.profesor.concat('-', group.group)">
+          {{ getSubjectLabel(group) }}
+        </label>
+        <!--
+          Creamos un campo de texto de tipo numerico cuyo valor a mostrar es el la calificacion actual, por defecto
+          es inicializado en cero. Ademas se agrega un evento change el cual se dispara cada vez que el campo es 
+          modificado y con el cual mantenemos actualizado el nivel de preferencia de la materia.
+        -->
+        <input
+          type="number"
+          [value]="group.preference"
+          [id]="getSubjectLabel(group)"
+          #preference
+          (change)="changePreference(group, preference.value)"
+        />
+        <!-- Creamos un boton que permita al usuario eliminar la materia de la lista de materias seleccionadas -->
+        <button type="button" (click)="removeSubject(group)" tabindex="-1">
+          <img src="/delete.svg" alt="Delete class from favorite" />
+        </button>
+      </li>
+    </ul>
+  </li>
+</ul>

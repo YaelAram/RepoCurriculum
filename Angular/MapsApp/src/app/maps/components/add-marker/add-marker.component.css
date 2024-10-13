@@ -1,0 +1,10 @@
+.add-mark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+.add-mark > button {
+  padding: 8px;
+}

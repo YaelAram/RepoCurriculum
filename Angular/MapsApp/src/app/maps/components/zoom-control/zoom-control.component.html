@@ -1,0 +1,27 @@
+<section class="rounded shadow zoom-control">
+  <div class="flex justify-content-evenly">
+    <p>Zoom: {{ zoom | number }}</p>
+    <p>
+      Lat. {{ currentCenter.lat | number }} Long.
+      {{ currentCenter.lng | number }}
+    </p>
+  </div>
+  <div class="flex justify-content-around mt-8">
+    <button type="button" class="rounded" (click)="zoomOut()">
+      <img src="zoom-out.svg" alt="Zoom out map" />
+    </button>
+    <input
+      type="range"
+      title="zoom range"
+      [min]="minZoom"
+      [max]="maxZoom"
+      [value]="zoom"
+      step="0.5"
+      #rangeInput
+      (change)="zoomTo(rangeInput.value)"
+    />
+    <button type="button" class="rounded" (click)="zoomIn()">
+      <img src="zoom-in.svg" alt="Zoom in map" />
+    </button>
+  </div>
+</section>

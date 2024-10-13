@@ -1,0 +1,19 @@
+select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--tertiary-color);
+  outline: none;
+  background-color: transparent;
+  color: var(--secondary-font);
+  font-size: medium;
+}
+
+select:focus,
+select:hover {
+  color: var(--primary-font);
+}
+
+option {
+  background-color: var(--secondary-color);
+  color: var(--primary-font);
+}

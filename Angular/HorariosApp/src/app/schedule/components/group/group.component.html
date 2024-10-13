@@ -1,0 +1,46 @@
+<table>
+  <thead>
+    <tr>
+      <th>Materia</th>
+      <th>Profesor</th>
+      <th>Grupo</th>
+      <th>Salón</th>
+      <th>Dias</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Cupo</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of groupInfo">
+      <td>{{ subject.subject | titlecase }}</td>
+      <td>{{ subject.profesor | titlecase }}</td>
+      <td>{{ subject.group | titlecase }}</td>
+      <td>{{ subject.classroom }}</td>
+      <td>{{ subject.days }}</td>
+      <td>{{ subject.start | date : "hh:mm a" }}</td>
+      <td>{{ subject.end | date : "hh:mm a" }}</td>
+      <td>{{ subject.students }}</td>
+      <td class="flex justify-center">
+        <button
+          type="button"
+          (click)="removeSubject(subject)"
+          *ngIf="isSelected(subject); else deleteBtn"
+          class="flex justify-center align-center"
+        >
+          <img src="/delete.svg" alt="Eliminar materia" />
+        </button>
+        <ng-template #deleteBtn>
+          <button
+            type="button"
+            (click)="addSubject(subject)"
+            class="flex justify-center align-center"
+          >
+            <img src="/add.svg" alt="Agregar materia" />
+          </button>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

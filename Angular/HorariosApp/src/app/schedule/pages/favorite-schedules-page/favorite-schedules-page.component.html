@@ -1,0 +1,15 @@
+<!-- 
+  Si la lista de horarios esta vacia entonces mostramos un mensaje informando al usuario que aun no ha 
+  marcado horarios como favoritos.
+-->
+<p *ngIf="favourites.length === 0; else thereIsElements">
+  Aun no tienes horarios favoritos guardados.
+</p>
+<ng-template #thereIsElements>
+  <!-- 
+    Si hay elementos que mostrar entonces mandamos a llamar el componente encargado de mostrarlos y 
+    se los enviamos.
+  -->
+  <h1>Favoritos</h1>
+  <schedule-gen-schedule [schedules]="favourites" />
+</ng-template>

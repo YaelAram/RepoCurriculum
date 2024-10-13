@@ -1,0 +1,72 @@
+<h1>Materias Seleccionadas</h1>
+<!-- Creamos un formulario, definimos el evento Submit y enlazamos el controlador del formulario -->
+<form
+  [formGroup]="form"
+  (ngSubmit)="handleSubmit()"
+  class="flex justify-center align-center gap-24"
+>
+  <!-- Definimos un nuevo grupo de formulario -->
+  <div class="flex flex-column">
+    <!-- Creamos un nuevo label para el campo del formulario -->
+    <label for="preference" class="light">Calificación Mínima</label>
+    <!-- 
+      Creamos un campo de tipo number y mediante la directiva formControlName la enlazamos a la propiedad 
+      preference del controlador del formulario
+    -->
+    <input
+      type="number"
+      id="preference"
+      min="0"
+      max="10"
+      formControlName="preference"
+    />
+  </div>
+  <!-- Definimos un nuevo grupo de formulario -->
+  <div class="flex flex-column">
+    <!-- Creamos un nuevo label para el campo del formulario -->
+    <label for="optatives" class="light">Número de Optativas</label>
+    <!-- 
+      Creamos un campo de tipo number y mediante la directiva formControlName la enlazamos a la propiedad 
+      optatives del controlador del formulario
+    -->
+    <input
+      type="number"
+      id="optatives"
+      min="0"
+      max="2"
+      formControlName="optatives"
+    />
+  </div>
+  <!-- Definimos un nuevo grupo de formulario -->
+  <div class="flex flex-column">
+    <!-- Creamos un nuevo label para el campo del formulario -->
+    <label for="start" class="light">Hora de Entrada</label>
+    <!-- 
+      Creamos un campo de tipo time y mediante la directiva formControlName la enlazamos a la propiedad 
+      start del controlador del formulario
+    -->
+    <input
+      type="time"
+      id="start"
+      min="07:00"
+      max="22:00"
+      formControlName="start"
+    />
+  </div>
+  <!-- Definimos un nuevo grupo de formulario -->
+  <div class="flex flex-column">
+    <!-- Creamos un nuevo label para el campo del formulario -->
+    <label for="end" class="light">Hora de Salida</label>
+    <!-- 
+      Creamos un campo de tipo time y mediante la directiva formControlName la enlazamos a la propiedad 
+      end del controlador del formulario
+    -->
+    <input type="time" id="end" min="13:00" max="22:00" formControlName="end" />
+  </div>
+  <!-- Creamos un boton que permite enviar el formulario, deshabilitamos el boton si el formulario es invalido -->
+  <button type="submit" [disabled]="form.invalid">
+    <img src="/create.svg" alt="Create schedules" />
+  </button>
+</form>
+<!-- Mostramos la lista de materias seleccionadas -->
+<schedule-subject />

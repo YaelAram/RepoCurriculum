@@ -1,0 +1,9 @@
+<!-- Si la lista de horarios generados esta vacia, mostramos un mensaje indicando la situacion al usuario -->
+<p *ngIf="schedules.length === 0; else thereIsElements">
+  Lo sentimos, no se pudo generar un horario que cumpla con tus espectativas.
+</p>
+<ng-template #thereIsElements>
+  <!-- Sino entonces mostramos los hoarios generados con ayuda del componente schedule-gen-schedule -->
+  <h1>Horarios Generados</h1>
+  <schedule-gen-schedule [schedules]="schedules" />
+</ng-template>

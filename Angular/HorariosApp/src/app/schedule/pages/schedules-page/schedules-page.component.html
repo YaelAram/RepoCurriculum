@@ -1,0 +1,33 @@
+<h1>Horarios Semestre 2025-1</h1>
+<!-- Creamos un formulario y enlazamos el controlador del formulario -->
+<form [formGroup]="form" class="flex justify-center align-center gap-16">
+  <!-- 
+    Enlazamos el menu desplegable con la propiedad del controlador shift mediante la directiva formControlName
+  -->
+  <select formControlName="shift">
+    <!-- Iteramos sobre las opciones de turno disponibles y generamos los elementos option -->
+    <option *ngFor="let shift of shifts" [value]="shift.regex">
+      {{ shift.label }}
+    </option>
+  </select>
+  <!-- 
+    Enlazamos el menu desplegable con la propiedad del controlador semester mediante la directiva formControlName 
+  -->
+  <select formControlName="semester">
+    <!-- Iteramos sobre las opciones de semestres disponibles y generamos los elementos option -->
+    <option *ngFor="let semester of semesters" [value]="semester.regex">
+      {{ semester.label }}
+    </option>
+  </select>
+  <!-- 
+    Enlazamos el menu desplegable con la propiedad del controlador group mediante la directiva formControlName 
+  -->
+  <select formControlName="group">
+    <!-- Iteramos sobre las opciones de grupos disponibles y generamos los elementos option -->
+    <option *ngFor="let group of groups" [value]="group">
+      {{ group }}
+    </option>
+  </select>
+</form>
+<!-- Mostramos la tabla con la informacion del grupo seleccionado actualmente -->
+<schedule-group-info [group]="group" />

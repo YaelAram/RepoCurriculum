@@ -1,0 +1,26 @@
+<header class="flex space-between">
+  <!-- Creamos un div para albergar el nombre de nuestra aplicaion -->
+  <div>
+    <!-- Creamos un elemento A y hacemos referencia la ruta main de la aplicacion -->
+    <a routerLink="/horarios/horarios-fes" class="black">HorariosApp</a>
+  </div>
+  <!-- Definimos el menu de navegacion -->
+  <nav>
+    <!-- Creamos un menu (similar a una lista) -->
+    <menu class="flex justify-end gap-24">
+      <!-- Iteramos sobre la lista con los elementos de navegacion -->
+      <li *ngFor="let item of items">
+        <!-- Creamos un elemento A por cada elemento y adjuntamos la ruta a la que apuntan -->
+        <a
+          [routerLink]="item.url"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="light"
+        >
+          <!-- Mostramos el titulo o descripcion del elemento -->
+          {{ item.title }}
+        </a>
+      </li>
+    </menu>
+  </nav>
+</header>

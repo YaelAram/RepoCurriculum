@@ -1,0 +1,17 @@
+<maps-minimap
+  [currentCenter]="currentCenter"
+  [zoom]="zoom"
+  (onMapInit)="mapCreated($event)"
+  (onMapMoved)="mapMoved($event)"
+/>
+
+<maps-zoom-control
+  *ngIf="map"
+  [currentCenter]="currentCenter"
+  [map]="map"
+  [zoom]="zoom"
+/>
+
+<maps-markers *ngIf="map" [map]="map" />
+
+<maps-add-marker *ngIf="map" [map]="map" />

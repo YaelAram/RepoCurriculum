@@ -1,0 +1,59 @@
+<!-- Iteramos sobre la lista con los horarios generados -->
+<table *ngFor="let schedule of schedules">
+  <caption class="bold">
+    <!-- 
+      Imprimimos la calificacion obtenida por el hoario, con el pipe de Angular numeber limitamos el numero
+      de decimales a dos
+    -->
+    Calificicación:
+    {{
+      schedule.preference | number : "1.2-2"
+    }}
+    <!--
+      A traves de un ngIf verificamos si el horario actual ya se encuentra marcado como favorito:
+      - Si lo esta mostramos el boton que permite al usuario desmarcar el horario como favorito
+      - Sino mostramos el boton para marcar el horario como favorito
+    -->
+    <!-- Boton desmarcar como favorito -->
+    <button
+      type="button"
+      *ngIf="isFavSchedule(schedule.id); else add"
+      (click)="removeSchedule(schedule.id)"
+    >
+      <img src="/remove_favorite.svg" alt="Remove from favorite schedules" />
+    </button>
+    <!-- Boton marcar como favorito -->
+    <ng-template #add>
+      <button type="button" (click)="addSchedule(schedule)">
+        <img src="/favorite.svg" alt="Add schedule to favorites" />
+      </button>
+    </ng-template>
+  </caption>
+  <!-- Mostramos los titulos de columna -->
+  <thead>
+    <tr>
+      <th>Materia</th>
+      <th>Profesor</th>
+      <th>Grupo</th>
+      <th>Salón</th>
+      <th>Dias</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Cupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Iteramos sobre la lista de materias que componen el horario -->
+    <tr *ngFor="let subject of schedule.subjects">
+      <!-- Mostramos la informacion del horario -->
+      <td>{{ subject.subject | titlecase }}</td>
+      <td>{{ subject.profesor | titlecase }}</td>
+      <td>{{ subject.group | titlecase }}</td>
+      <td>{{ subject.classroom }}</td>
+      <td>{{ subject.days }}</td>
+      <td>{{ subject.start | date : "hh:mm a" }}</td>
+      <td>{{ subject.end | date : "hh:mm a" }}</td>
+      <td>{{ subject.students }}</td>
+    </tr>
+  </tbody>
+</table>

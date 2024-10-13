@@ -1,0 +1,102 @@
+:root {
+  --bg-color: #fffbf5;
+  --primary: #f7efe5;
+  --secondary: #c3acd0;
+  --accent: #7743db;
+  --font: black;
+  --secondary-font: rgb(181, 181, 181);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  padding: 0;
+  margin: 0;
+}
+
+/* FlexBox */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+/* Other */
+.mt-8 {
+  margin-top: 8px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.shadow {
+  box-shadow: 0 10px 10px rgb(0 0 0 / 0.5);
+}
+
+button {
+  background-color: var(--accent);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+  color: var(--primary-text);
+  font-size: large;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+p {
+  margin: 0;
+  color: var(--primary-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #352f44;
+    --primary: #2a2438;
+    --secondary: #411e8f;
+    --accent: #310a5d;
+    --primary-text: white;
+    --secondary-text: rgb(133, 133, 133);
+  }
+}

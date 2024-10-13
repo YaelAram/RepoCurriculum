@@ -1,0 +1,14 @@
+<section class="rounded shadow markers" *ngIf="markers.length">
+  <ul class="rounded">
+    <li
+      class="flex justify-content-between align-center"
+      *ngFor="let marker of markers; let i = index"
+      (click)="flyTo(marker.mark.getLngLat())"
+    >
+      <span>{{ marker.title }}</span>
+      <button type="button" class="rounded" (click)="deleteMarker(i)">
+        <img src="delete.svg" alt="Remove marker" />
+      </button>
+    </li>
+  </ul>
+</section>
