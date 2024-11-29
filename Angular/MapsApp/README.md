@@ -1,27 +1,69 @@
-# 09MapsApp
+# Maps App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+Esta aplicación utilizando los servicios de Mapbox despliega un mapa interactivo similar al de Google Maps, ademas
+permite al usuario hacer zoom y desplazarse por el mapa arrastrando el mapa. El usuario puede guardar ubicaciones
+las cuales son guardadas en el _local storage_, estas son mostradas en un menú lateral que muestra el nombre de la
+ubicación, un boton para eliminarla y si es usuario hace click sobre un elemento traslada el mapa a la ubicación.
 
-## Development server
+Se utiliza la API de geolocalización del navegador para obtener la ubicación actual del usuario y establecerla como
+la ubicación inicial. Y el servicio de geolocalización inversa de Mapbox para obtener el nombre del lugar segun las
+coordenadas enviadas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+- Angular 18.1.0
+- RxJS 7.8.0
+- TypeScript 5.5.2
+- NodeJS 20.15.1
+- NPM 10.8.1
+- Mapbox GL 3.5.2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ¿Como utilizar el proyecto?
 
-## Build
+1. Clonar el repositorio
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+git clone https://github.com/YaelAram/RepoCurriculum.git
+```
 
-## Running unit tests
+2. Navegar a la carpeta del proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Instalar las dependencias de Node
 
-## Running end-to-end tests
+```
+npm i
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. En la carpeta _environments_ se debe crear un archivo con el mismo nombre y el siguiente contenido:
 
-## Further help
+```
+export const Environments = {
+  MAPBOX_KEY: "",
+} as const;
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Nota: Dentro del _string_ se debe ingresar el token de Mapbox del usuario que descargo el repositorio.**
+
+5. Instalar el Angular CLI
+
+```
+npm install -g @angular/cli
+```
+
+6. Verificar que el Angular CLI este instalado correctamente
+
+```
+ng version
+```
+
+7. Ejecutar el servidor de prueba
+
+```
+ng serve
+```
+
+8. Contruir la version de produccion del proyecto
+
+```
+ng build
+```

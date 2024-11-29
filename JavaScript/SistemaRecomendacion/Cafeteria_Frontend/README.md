@@ -11,6 +11,33 @@ consutlar resgistros de ventas, utilizar el modelo de inferencia para sugerir un
 - Vite 4.4.5 (Empaquetador de nuestra aplicacion)
 - TypeScript 5.0.2 (Super set de JavaScript)
 
+## ¿Comó utilizar el proyecto?
+
+1. Clonar el repositorio
+
+```
+git clone https://github.com/YaelAram/RepoCurriculum.git
+```
+
+2. Navegar a la carpeta del proyecto
+3. Instalar las dependencias de Node
+
+```
+npm i
+```
+
+4. Iniciar el servidor de desarrollo:
+
+```
+npm run dev
+```
+
+5. Crear la _build_ de producción:
+
+```
+npm run build
+```
+
 ## Paginas
 
 ### Pagina Sugerir

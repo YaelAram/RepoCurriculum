@@ -15,6 +15,35 @@ contamos con la colleción _**Sales**_ esta guarda toda la información relacion
 - MONGOOSE 7.4.5 (ORM que facilita la construcción de queries a la base de datos MongoDB)
 - Visual Studio Code 1.82.2 (Editor de código utilizado)
 
+## ¿Comó utilizar el proyecto?
+
+1. Clonar el repositorio
+
+```
+git clone https://github.com/YaelAram/RepoCurriculum.git
+```
+
+2. Navegar a la carpeta del proyecto
+3. Instalar las dependencias de Node
+
+```
+npm i
+```
+
+4. Reconstruir el archivo ENV
+5. Compilar el código TypeScript e iniciar el servidor:
+
+```
+npm run dev
+```
+
+Adicionalmente, si el código no ha sido modificado podemos reutilizar los archivos compilados generados por el
+comando _npm run dev_:
+
+```
+npm run start
+```
+
 ## Contenido del archivo .env
 
 Este archivo contiene las variables de entorno utilizadas por el servico, en ellas hay información sensible que no

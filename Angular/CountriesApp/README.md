@@ -1,27 +1,76 @@
-# 03CountriesApp
+# Countries App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+Esta aplicación se encarga de utilizar la API REST publica de Rest Countries para mostrar al usuario
+una tabla con todos los paises proporcionados por la API. Muestra algunas caracteristicas relevantes del pais como
+su nombre, capital, bandera nacional, etc.
 
-## Development server
+Esta aplicación consta de cuatro rutas principales:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- La ruta "/by-capital": En esta ruta permite al usuario buscar un pais según su capital.
+- La ruta "/by-country": En esta ruta permite al usuario buscar un pais según su nombre.
+- La ruta "/by-region": En esta ruta permite al usuario buscar un pais según la region (continente) a la
+  que pertenece. A diferencia de las otras rutas esta ruta no muestra un campo de busqueda, propociona en su lugar
+  un menú desplegable con todas las regiones disponibles.
+- La ruta "/by/:id": En esta ruta permite al usuario ver de forma detallada la información de un pais, accede
+  a este ruta cuando da click sobre la opción "View more..." en alguna de las pantallas anteriores.
 
-## Code scaffolding
+**Nota: Las primeras tres rutas muestran la información en forma de tabla, donde cada renglon muestra la
+información de un pais y la opción "View more..." para visualizar la información del pais de forma detallada.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Nota: Para la busqueda de paises, la barra de busqueda tiene un _debounce_ para reducir el número de peticiones
+al servidor.**
 
-## Build
+**Nota: La API nos retorna todos aquellos paises que coincidan parcial o totalmente con el termino de busqueda
+ingresado por el usuario.**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Adicionalmente la aplicación guarda un registro en el _local storage_ con los últimos terminos de busqueda ingresado por
+el usuario.
 
-## Running unit tests
+## Tecnologias Utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 17.0.0
+- RxJS 7.8.0
+- TypeScript 5.2.2
+- Bootstrap
+- NodeJS 20.10.0
+- NPM 10.8.1
 
-## Running end-to-end tests
+## ¿Como utilizar el proyecto?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clonar el repositorio
 
-## Further help
+```
+git clone https://github.com/YaelAram/RepoCurriculum.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navegar a la carpeta del proyecto
+
+3. Instalar las dependencias de Node
+
+```
+npm i
+```
+
+4. Instalar el Angular CLI
+
+```
+npm install -g @angular/cli
+```
+
+5. Verificar que el Angular CLI este instalado correctamente
+
+```
+ng version
+```
+
+6. Ejecutar el servidor de prueba
+
+```
+ng serve
+```
+
+7. Contruir la version de produccion del proyecto
+
+```
+ng build
+```

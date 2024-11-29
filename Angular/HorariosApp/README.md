@@ -1,15 +1,19 @@
 # Proyecto para la materia de Inteligencia Artificial: HorariosApp
 
-Este repositorio contiene el proyecto HorariosApp que es una aplicacion de Angular que se encarga de generar horarios
+HorariosApp que es una aplicacion de Angular que se encarga de generar horarios
 de clases para estudiantes de la Facultad de Estudios Superiores "Aragon" de la carrera de Ingenieria en Computacion
 utilizando las materias y grupos seleccionados por el estudiante asi como tomando en cuenta el nivel de preferencia
 que el usuario tiene por las materias y grupos, la cantidad de materias optativas, etc.
 
-## Integrantes del equipo
+La información de los horarios ofrecidos por la FES "Aragón" fue extraida de la API oficial de la institución y
+almacenada en dos archivos JSON para consumo de la aplicación. Se utilizo este enfoque ya que la API de la FES "Aragón"
+bloquea las peticiones realizadas por sitior ajenos y no se contaba con la infraestructura necesaria para implementar
+una API propia, ademas se realizaron adecuaciones a la información para facilitar su uso.
 
-- Castillo Sanchez Yael Aram
-- Cruz Ramirez Joshua Rene
-- Quijano Cabello Axel
+La principal ventaja de utilizar esta aplicación es que simplifica el proceso de creación de horarios de clase a los
+alumnos, les permite indicar sus grupos, profesores e indicar que grupos priorizar. Esta aplicación genera horarios
+de clase que no contienen materias duplicadas, cumplen con la calificación minima ingresada por el usuario y evita
+que los horarios contegan colisiones (dos o más clases cuyos horarios se solapan).
 
 ## Tecnologias utilizadas:
 
@@ -31,7 +35,7 @@ que el usuario tiene por las materias y grupos, la cantidad de materias optativa
 1. Clonar el repositorio
 
 ```
-git clone https://github.com/YaelAram/Dev.git
+git clone https://github.com/YaelAram/RepoCurriculum.git
 ```
 
 2. Navegar a la carpeta del proyecto
@@ -57,18 +61,10 @@ ng version
 6. Ejecutar el servidor de prueba
 
 ```
-ng server
+ng serve
 ```
 
-## Comando utiles
-
-- Ejecutar el servidor de prueba
-
-```
-ng server
-```
-
-- Contruir la version de produccion del proyecto
+7. Contruir la version de produccion del proyecto
 
 ```
 ng build
