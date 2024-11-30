@@ -1,4 +1,4 @@
-# Proyecto Matemáticas Discretas
+# Proyecto Chat Bot
 
 Crear un chatbot que permita simular la compra de libros mediante la creación de un grafo
 
@@ -8,7 +8,7 @@ Crear un chatbot que permita simular la compra de libros mediante la creación d
 
 Crear archivo con variables de entorno (.env), con la siguiente estructura:
 
-En la variable MongoDB_Atlas deberás pegar el URL de conexión generado por MongoDB Atlas al crear una nueva base de 
+En la variable MongoDB_Atlas deberás pegar el URL de conexión generado por MongoDB Atlas al crear una nueva base de
 datos, además del usuario y contraseña creado en el mismo sitio
 
 Las demás variables corresponden a los emotes que utiliza el sistema para crear los mensajes de chat, estos pueden ser
@@ -41,24 +41,24 @@ node app
 
 ## Funcionamiento
 
-El sistema funciona mediante el reconocimiento de algunas palabras o comandos clave disparan la ejecución de una 
+El sistema funciona mediante el reconocimiento de algunas palabras o comandos clave disparan la ejecución de una
 función, los datos mostrados son recuperados de la API de Google Books, solo se muestran los primeros 4 resultados.
 
 ## Lista de Comandos
 
-* BUSCAR: Permite realizar una consulta a partir del título ingresado por el usuario
-* COMPRAR: Permite realizar la búsqueda y agregar productos a la cesta de compras
-* CARRITO: Permite visualizar y eliminar los elementos que están en la cesta de compras
-* TERMINAR COMPRA: Permite dar un último vistazo a la cesta de compras, simula la compra de los productos, 
-imprime un recibo de compra y añade los artículos a la biblioteca.
-* LIBRERIA: Permite acceder a la librería, donde se encuentran todos los artículos adquiridos y se puede
-seleccionar uno para comenzar a leer
-* AYUDA: Da un breve resumen sobre la función de cada comando y un ejemplo de cómo usarlos
-* SALIR: Finaliza la ejecución de la aplicación
+- BUSCAR: Permite realizar una consulta a partir del título ingresado por el usuario
+- COMPRAR: Permite realizar la búsqueda y agregar productos a la cesta de compras
+- CARRITO: Permite visualizar y eliminar los elementos que están en la cesta de compras
+- TERMINAR COMPRA: Permite dar un último vistazo a la cesta de compras, simula la compra de los productos,
+  imprime un recibo de compra y añade los artículos a la biblioteca.
+- LIBRERIA: Permite acceder a la librería, donde se encuentran todos los artículos adquiridos y se puede
+  seleccionar uno para comenzar a leer
+- AYUDA: Da un breve resumen sobre la función de cada comando y un ejemplo de cómo usarlos
+- SALIR: Finaliza la ejecución de la aplicación
 
 ## Guía Básica del Uso de Comandos
 
-En el flujo normal de funcionamiento de la aplicación, al inicio de esta o luego de haber ejecutado algún comando, esta 
+En el flujo normal de funcionamiento de la aplicación, al inicio de esta o luego de haber ejecutado algún comando, esta
 regresara al siguiente estado:
 
 ```
@@ -68,7 +68,7 @@ regresara al siguiente estado:
 
 Aquí en donde escribiremos cada uno de los comandos que deseamos ejecutar.
 
-**NOTA: La ejecución de comandos puede no seguir un orden establecido, es decir, el recorrido por la aplicación puede 
+**NOTA: La ejecución de comandos puede no seguir un orden establecido, es decir, el recorrido por la aplicación puede
 ser aleatorio y no requiere de seguir un camino estricto para llegar a un punto**
 
 Por ejemplo: Un usuario podría seguir el siguiente recorrido dentro de la aplicación para realizar una compra:
@@ -83,20 +83,20 @@ Por ejemplo: Un usuario podría seguir el siguiente recorrido dentro de la aplic
 
 **NOTA: Los comandos no son sensibles a mayúsculas o minúsculas**
 
-**NOTA: Para navegar por los menú puede realizarse mediante el uso de las teclas de dirección o escribiendo el número de 
+**NOTA: Para navegar por los menú puede realizarse mediante el uso de las teclas de dirección o escribiendo el número de
 la opción que deseamos, si deseas seleccionar esa opción teclea ENTER**
 
 ### Comando BUSCAR COMPRAR
 
-**NOTA: El funcionamiento de ambos comandos es similar, con la única diferencia en que COMPRAR añade los libros 
+**NOTA: El funcionamiento de ambos comandos es similar, con la única diferencia en que COMPRAR añade los libros
 seleccionados en la cesta de compras**
 
 Permite realizar una consulta a partir del título ingresado por el usuario.
 
 Este comando puede funcionar de dos formas distintas:
 
-* Con Parámetros
-* Sin Parámetros
+- Con Parámetros
+- Sin Parámetros
 
 #### Funcionamiento con Parámetros
 
@@ -106,8 +106,8 @@ Ingresamos en el cuadro de texto la palabra clave BUSCAR seguido de los títulos
 
 Ejemplo: Busquemos los siguientes libros:
 
-* Las Dos Torres
-* El retorno del rey
+- Las Dos Torres
+- El retorno del rey
 
 ```
 ? ( ͠• ͜ʖ ͡•): ¿En que puedo ayudarte?
@@ -144,7 +144,7 @@ Una vez finaliza con la búsqueda de los libros, vuelve a preguntar por una nuev
 
 El funcionamiento de este comando son parámetros es similar al funcionamiento con parámetros.
 
-Realicemos la búsqueda de los mismo libros que, en la sección anterior, en este caso únicamente ingresaremos la 
+Realicemos la búsqueda de los mismo libros que, en la sección anterior, en este caso únicamente ingresaremos la
 palabra clave COMPRAR.
 
 ```
@@ -186,12 +186,12 @@ Las Dos Torres y el Señor de los anillos: El Retorno del Rey):
  ( ) 2. El Senor de los Anillos: El Retorno del Rey = The Lord of the Rings ( J. R. R. Tolkien )
 ```
 
-Este menu a diferencia de los demas funciona como un CheckBox, los libros cuyas casillas sean seleccionadas seran 
+Este menu a diferencia de los demas funciona como un CheckBox, los libros cuyas casillas sean seleccionadas seran
 eliminados de la cesta de compras, para seleccionar basta con teclear ESPACIO y para confirmar la lista ENTER.
 
 ### Comando TERMINAR COMPRA
 
-Permite dar un ultimo vistazo a la cesta de compras, simula la compra de los productos, imprime un recibo de compra y 
+Permite dar un ultimo vistazo a la cesta de compras, simula la compra de los productos, imprime un recibo de compra y
 añade los articulos a la biblioteca.
 
 Una vez el sistema reconoce este comando, pregunta al usuario si desea dar un ultimo vistazo a la cesta de compras:
@@ -225,7 +225,7 @@ cerrar la aplicacion.
 
 ### Comando LIBRERIA
 
-Permite acceder a la libreria, donde se encuentran todos los articulos adquiridos y se puede seleccionar uno para 
+Permite acceder a la libreria, donde se encuentran todos los articulos adquiridos y se puede seleccionar uno para
 comenzar a leer.
 
 La aplicacion crea un menu con todos los libros que han sido comprados, al seleccionar uno se muestra en pantalla
@@ -291,7 +291,7 @@ en la libreria.
 
 ### Comando No Reconocido
 
-Si el usuario ingresa un comando que no es reconocido por el sistema, este muestra el siguiente mensaje y vuelve a 
+Si el usuario ingresa un comando que no es reconocido por el sistema, este muestra el siguiente mensaje y vuelve a
 preguntar por una nueva accion:
 
 ```
