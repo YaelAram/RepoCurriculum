@@ -51,3 +51,11 @@ Hasta el momento este repositorio contiene los siguientes proyectos:
   - Store: Se trata de una tienda online, dentro del proyecto se puede observar el código fuente del servidor y de la
     tienda. Para el manejo de las peticiones HTTP se utilizo Tankstack Query. Para más información consulta
     [Store](./React/Store/).
+- Arduino
+  - Sistema de Control: Se trata de un sistema de control diseñado para restaurantes tipo parrilla Coreana donde tu mismo
+    cocinas los alimentos. Este sistema se encarga de monitorear la temperatura, procentaje de luz, concentración de
+    gas y la presencia de clientes en un comedor privado y comunicar el estado a un servidor en la nube que procesa los
+    datos e indica al sistema si debe activar el aire acondicionado, el sistema de iluminación, el sistema de alerta
+    de presencia de gas o el sistema de alerta de presencia de usuario (para indicar al personal que el comedor privado
+    esta vacio y disponible para recibir nuevos clientes). Para más información consulta
+    [Sistema de Control](./Arduino/sistema_control/).
