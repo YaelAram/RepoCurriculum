@@ -1,11 +1,5 @@
 # Sistema de Control
 
-## Integrantes
-
-- Castillo Sánchez Yael Aram
-- Cruz Ramírez Joshua Rene
-- Quijano Cabello Axel
-
 ## Planteamiento del problema
 
 Las parrillas Coreanas se caracterizan por proveer al cliente con una parrilla a gas y la comida necesaria para el

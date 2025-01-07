@@ -17,6 +17,15 @@ Hasta el momento este repositorio contiene los siguientes proyectos:
     navegador para obtener la ubicación actual del usuario (ubicación inicial al iniciar la aplicación) y el servicio
     _reverse geolocation_ de Mapbox para obtener el nombre del lugar. Para más información
     consulta [Maps App](./Angular/MapsApp/).
+  - GitHubIssues: Esta aplicación permite consultar las _issues_ relacionadas al repositorio de Angular, ademas el
+    usuario puede filtrar dichas _issues_ según su estado (abierta o cerrada) y segun los _labels_ con los que fue
+    etiquetada la _issue_. Si el usuario da click sobre el _issue_ puede acceder a la descripción y comentarios del mismo.
+    Para el manejo de las peticiones HTTP se utilizó Tanstack Query. Para más información
+    consulta [GitHub Issues](./Angular//GitHubIssues/).
+  - Pokemon*SSR_SSG: Muestra los primeros 400 pokemon de forma páginada (20 pokemon por página). Esta aplicación tiene
+    soporte a SSR y se realiza el prerenderizado de las primeras 5 páginas y de las páginas que muestran los detalles
+    sobre algunos pokemon. Se creo un \_script* que permite generar el archivo _routes.txt_ automáticamente según algunas
+    configuraciones del usuario. Para más información consulta: [Pokemon SSR SSG](./Angular/Pokemon_SSR_SSG/).
 - JavaScript
   - Laberinto: Es un _script_ que permite generar laberintos circulares aleatorios siguiendo las configuraciones iniciales
     del usuario. Ademas calcula si a partir de un punto aleatorio existe un camino que lo conecte con el centro del

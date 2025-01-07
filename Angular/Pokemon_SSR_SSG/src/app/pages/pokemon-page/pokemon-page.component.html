@@ -1,0 +1,11 @@
+<h1>Pokedex</h1>
+<div>
+  <a [routerLink]="prevRoute()"> Prev Page </a>
+  <p>{{ page() }}</p>
+  <a [routerLink]="nextRoute()"> Next Page </a>
+</div>
+@if (pokemon().length) {
+<pokemon-list [pokemon]="pokemon()" />
+}@else {
+<div><pokemon-loader /></div>
+}

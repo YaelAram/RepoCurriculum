@@ -1,0 +1,53 @@
+<h1>GitHub Issues</h1>
+<div class="my-5 border-b-2 border-blue-600">
+  <section class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+    <div class="flex flex-col col-span-3">
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="btn"
+          [class.active]="state() === 'all'"
+          (click)="setState('all')"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          class="btn"
+          [class.active]="state() === 'open'"
+          (click)="setState('open')"
+        >
+          Open
+        </button>
+        <button
+          type="button"
+          class="btn"
+          [class.active]="state() === 'closed'"
+          (click)="setState('closed')"
+        >
+          Closed
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-4 flex flex-col col-span-2">
+      @if (issuesQuery.isPending()) {
+        <p>Loading...</p>
+      } @else if (issuesQuery.isError()) {
+        <p>Error: {{ issuesQuery.error().message }}</p>
+      } @else {
+        <issue-issue-selector [issues]="issuesQuery.data() ?? []" />
+      }
+    </div>
+
+    <div>
+      @if (labelsQuery.isPending()) {
+        <p>Loading...</p>
+      } @else if (labelsQuery.isError()) {
+        <p>Error: {{ labelsQuery.error().message }}</p>
+      } @else {
+        <issue-label-selector [labels]="labelsQuery.data() ?? []" />
+      }
+    </div>
+  </section>
+</div>

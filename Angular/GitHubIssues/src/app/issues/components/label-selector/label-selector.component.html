@@ -1,0 +1,17 @@
+<div class="flex flex-wrap justify-center items-center gap-2">
+  @for (label of labels(); track label.id) {
+    <button
+      type="button"
+      class="border p-2 rounded-md hover:bg-slate-950 cursor-pointer"
+      (click)="toggle(label.name)"
+      [title]="label.description"
+      [style.color]="label.color"
+      [style.borderColor]="label.color"
+      [class.selected-label]="isActive(label.name)"
+    >
+      {{ label.name }}
+    </button>
+  } @empty {
+    <p>There are no labels to show</p>
+  }
+</div>

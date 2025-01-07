@@ -1,0 +1,9 @@
+<a [routerLink]="['/pokemon/by', pokemon().name]">
+  <img
+    [ngSrc]="spriteUrl()"
+    width="96"
+    height="96"
+    [alt]="pokemon().name + 'official artwork'"
+  />
+  <p>{{ pokemon().name | titlecase }}</p>
+</a>

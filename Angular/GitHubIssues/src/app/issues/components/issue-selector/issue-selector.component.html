@@ -1,0 +1,5 @@
+@for (issue of issues(); track issue.id) {
+  <issue-chip [issue]="issue" />
+} @empty {
+  <p>There are not isues to show</p>
+}
