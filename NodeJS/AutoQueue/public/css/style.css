@@ -1,0 +1,64 @@
+html,
+body,
+main {
+  height: 100vh;
+  width: 100vw;
+  background-color: #6951f0;
+  color: white;
+}
+
+.gen-tickets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.public-tickets {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 3fr 1fr;
+  grid-template-areas: "primary second" "primary third" "primary fourth";
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-ticket {
+  background-color: #282828;
+  grid-area: primary;
+}
+
+.second-ticket {
+  grid-area: second;
+}
+
+.third-ticket {
+  grid-area: third;
+}
+
+.fourth-ticket {
+  grid-area: fourth;
+}
+
+.ticket-current-number {
+  font-size: 80px;
+}
+
+.ticket-current-desk {
+  font-size: 45px;
+}
+
+.ticket-secondary {
+  font-size: 25px;
+}
+
+/* Nuevo-ticket */
+
+#lbl-new-ticket {
+  font-size: 70px;
+}

@@ -1,6 +1,10 @@
 # Proyecto Chat Bot
 
-Crear un chatbot que permita simular la compra de libros mediante la creación de un grafo
+Este proyecto presenta un chat bot creado a partir de un grafo. Este chat bot utiliza la API publica de Google
+Books para obtener la información de los libros consultados por el usuario como el titulo del libro, nombre del autor,
+el precio por el que es vendido dentro de la tienda de Google, etc. Además el usuario puede agregar dichos archivos a
+un carrito de compras y simular su compra, dicha información de compra se registra dentro de una base de datos en
+MongoDB.
 
 ## Requerimientos Previos
 

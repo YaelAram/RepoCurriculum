@@ -42,16 +42,19 @@ Hasta el momento este repositorio contiene los siguientes proyectos:
     una tienda oline de libros, este bot le permite consultar su biblioteca persona (libros comprados) y buscar nuevos
     libros, ademas se incluye una conexión a Google Books para obtener una lista de libros a partir del termino
     buscado por el usuario (titulo, autor, etc). Para más información consulta [Chat Bot](./NodeJS/ChatBot/).
-  - REST Server: Se trata de una API REST que permite realizar un CRUD a varias colecciones de objetos, ademas permite
-    la subida de archivos y los almacena en el servicio de Cloudinary, la información es almacenada en Mongo Atlas y la
-    información enviada por el usuario pasa por una fase de validación. Por último, la aplicación permite el registro
-    de nuevos usuarios los cuales pueden utilizar la integración con el servicio de Google o rellenar un formulario
-    con un email y contraseña, las contraseñas son procesadas por el algoritmo Bcrypt y para la gestión de sesiones el
-    servidor es capaz de generar y validar JWT. Para más información consulta [REST Server](./NodeJS/REST_Server/).
-  - Socket Queue: Esta aplicación contiene un servidor y dos páginas HTML, trata de simular el sistema de tickets de un
-    banco, en donde una de las páginas permite generar nuevos tickets y hacer avanzar la fila mientras que la otra se
-    encarga de mostrar el ticket actual. El servidor y las páginas se comunican mediante sockets. Para más
-    información consulta [Socket Queue](./NodeJS/Socket_Queue/).
+  - Cloud Functions: Se trata de una _Netlify Function_ que se encarga de responder ante las solitudes creadas por un
+    webhook de GitHub, el webhook esta configurado para notificar eventos relacionados con las estrellas e _issues_
+    de un repositorio. Ademas, se conecta con un bot de Discord para notificar en un canal el evento que ocurrio
+    dentro del repositorio. Para más información consulta [Cloud Functions](./NodeJS/CloudFunctions/).
+  - Auto Queue: Esta aplicación contiene un servidor y tres páginas HTML, trata de simular el sistema de tickets de un
+    banco, en donde una de las páginas permite generar nuevos tickets, otra se encarga de mostrar el ticket actual y
+    la última permite a los cajeros tomar un nuevo ticket. El servidor y las páginas se comunican mediante sockets y
+    peticiones a una API Rest. Para más información consulta [Socket Queue](./NodeJS/AutoQueue/).
+  - Auth Rest Server: Se trata de una API Rest la cual se encarga de gestionar tres colecciones (Usuarios, productos
+    y categorias) y almacenarlos de forma persistente en una base de datos MongoDB. Ademas el servidor tiene soporte
+    para gestionar la carga de archivos, las contraseñas de los usuarios son procesadas por el algortimo Bcrypt y se
+    gestiona la autenticación y autorización de usuarios mediante un sistema de roles y JWT. Para más información
+    consulta [Auth Rest Server](./NodeJS/AuthRestServer/).
 - React
   - Google Translator Clon: Se trata de un clon de Google Translator, este clon unicamente permite los idiomas Inglés,
     Español y Aleman. Para la traducción se utiliza el motor GPT-3.5-Turbo. Ademas se incluye una opción de idioma
