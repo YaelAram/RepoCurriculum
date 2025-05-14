@@ -71,3 +71,12 @@ Hasta el momento este repositorio contiene los siguientes proyectos:
     de presencia de gas o el sistema de alerta de presencia de usuario (para indicar al personal que el comedor privado
     esta vacio y disponible para recibir nuevos clientes). Para más información consulta
     [Sistema de Control](./Arduino/sistema_control/).
+- ASP.NET Core
+  - StockMarketApi: Se trata de una API basada en controladores, permite la gestion de una colección de _Stocks_ y
+    otra colección con los comentarios relacionados a los _Stocks_ esta información es guardada en una base de datos
+    PostgreSQL y se utiliza el ORM Entity Framework Core. Además la aplicación incorpora un sistema de autenticación y
+    autorización basada en Identity y JwtBearer, se implemento un sistema de refresco de _tokens_ que requiere un
+    _refresh token_ vigente. Los endpoints de la aplicación poseen politicas de _rate limit_ y _cors_. La información
+    de configuración (no sensible) es guardada en el archivo _appsettings.json_ el resto es guardada utilizando
+    el _secret manager_.
+    Para más información consulta [StockMarketApi](./ASP.NET%20Core/StockApp/)
