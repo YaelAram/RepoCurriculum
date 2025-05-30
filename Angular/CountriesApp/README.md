@@ -1,39 +1,36 @@
 # Countries App
 
-Esta aplicación se encarga de utilizar la API REST publica de Rest Countries para mostrar al usuario
-una tabla con todos los paises proporcionados por la API. Muestra algunas caracteristicas relevantes del pais como
-su nombre, capital, bandera nacional, etc.
+Esta aplicación permite al usuario buscar paises por nombre, capital o region basandose en el termino de búsqueda 
+proporcionado por el usuario. Se hizo uso de la API pública _Rest Countries_ para obtener la siguiente información
+de los paises: Bandera, nombre, ciudad capital, población, monedas locales, idiomas oficiales y las coordenadas del
+país.
 
-Esta aplicación consta de cuatro rutas principales:
+La información es mostrada al usuario en forma de una tabla, se utilizo el formato SVG de la bandera proporcionada
+por la API y se carga de forma perezosa (_lazy loading_) y las coordenadas son utilizadas para construir un link a 
+Google Maps con la ubicación del país.
+
+El diseño de la página es responsive por lo cual puede ser visualizada en dispositivos moviles y PC.
+
+Por último, la aplicación se contruyo en Angular 19 con el soporte experimental para zoneless y utilizando el modelo
+de reactividad basado en _signals_ y la API experimental rxResource para el manejo de las peticiones HTTP.
+
+Esta aplicación consta de tres rutas:
 
 - La ruta "/by-capital": En esta ruta permite al usuario buscar un pais según su capital.
 - La ruta "/by-country": En esta ruta permite al usuario buscar un pais según su nombre.
-- La ruta "/by-region": En esta ruta permite al usuario buscar un pais según la region (continente) a la
-  que pertenece. A diferencia de las otras rutas esta ruta no muestra un campo de busqueda, propociona en su lugar
+- La ruta "/by-region": En esta ruta permite al usuario buscar un pais según la region (continente) a la que 
+  pertenece. A diferencia de las otras rutas esta ruta no muestra un campo de busqueda, propociona en su lugar
   un menú desplegable con todas las regiones disponibles.
-- La ruta "/by/:id": En esta ruta permite al usuario ver de forma detallada la información de un pais, accede
-  a este ruta cuando da click sobre la opción "View more..." en alguna de las pantallas anteriores.
-
-**Nota: Las primeras tres rutas muestran la información en forma de tabla, donde cada renglon muestra la
-información de un pais y la opción "View more..." para visualizar la información del pais de forma detallada.**
 
 **Nota: Para la busqueda de paises, la barra de busqueda tiene un _debounce_ para reducir el número de peticiones
 al servidor.**
 
-**Nota: La API nos retorna todos aquellos paises que coincidan parcial o totalmente con el termino de busqueda
-ingresado por el usuario.**
-
-Adicionalmente la aplicación guarda un registro en el _local storage_ con los últimos terminos de busqueda ingresado por
-el usuario.
-
 ## Tecnologias Utilizadas
 
-- Angular 17.0.0
-- RxJS 7.8.0
-- TypeScript 5.2.2
-- Bootstrap
-- NodeJS 20.10.0
-- NPM 10.8.1
+- Angular 19.1.5
+- TypeScript 5.6.3
+- NodeJS 22.11.0
+- NPM 11.4.1
 
 ## ¿Como utilizar el proyecto?
 

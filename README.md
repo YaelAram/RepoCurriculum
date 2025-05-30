@@ -6,9 +6,13 @@ o implican conceptos interesantes como para ser mostrados en mi página personal
 Hasta el momento este repositorio contiene los siguientes proyectos:
 
 - Angular
-  - Countries App: Una aplicación que permite al usuario buscar paises por nombre, capital o region (Continente), asi
-    como ver a detalle información sobre el pais. En la sección de consulta muestra el nombre del pais, bandera,
-    region, etc. Para más información consulta [Countries App](./Angular/CountriesApp/).
+  - Countries App: Una aplicación que permite al usuario buscar paises por nombre, capital o region (Continente), en
+    cada página la aplicación muestra una tabla con información relevante sobre los paises que cumplan con
+    el termino de búsqueda, por ejemplo, nombre del país, ciudad capital, bandera, moneda, idiomas y un link a Google
+    Maps que muestra la ubicación del país. El campo de texto para la búsqueda por nombre o capital tiene implementado
+    un sistema de debounce. La aplicación se desarrollo en Angular 19 con el soporte experimental para Zoneless y
+    utilizando el nuevo sistema de reactividad basado en _signals_. Para más información
+    consulta [Countries App](./Angular/CountriesApp/).
   - Horarios App: Esta aplicación genera de forma automatica horarios para los alumnos de la FES Aragón de la carrera
     de Ingenieria en Computación para el semestre 2025-1, la información utilizada por la aplicación fue recolectada
     de la API oficial de la institución. Para más información consulta [Horarios App](./Angular/HorariosApp/).

@@ -1,0 +1,43 @@
+div {
+  margin: 24px 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  outline: 2px solid #535c91;
+  padding: 8px 16px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 65dvw;
+
+  color: #535c91;
+  font-size: larger;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (width > 800px) {
+  input {
+    width: 40dvw;
+  }
+}
+
+input:focus {
+  color: #9290c3;
+}
+
+img {
+  border: 0;
+}
+
+p {
+  text-align: center;
+  margin: 8px 0 0;
+  font-weight: 300;
+  font-style: italic;
+  color: #9290c3;
+}

@@ -1,0 +1,35 @@
+div {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  border: 0;
+  outline: 2px solid #535c91;
+  border-radius: 16px;
+  background-color: transparent;
+  padding: 8px 16px;
+  width: 65dvw;
+  cursor: pointer;
+
+  color: #535c91;
+  font-size: larger;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (width > 800px) {
+  select {
+    width: 40dvw;
+  }
+}
+
+select > option {
+  background-color: #111;
+}
+
+select > option:hover {
+  cursor: pointer;
+  background-color: #1b1a55a5;
+}

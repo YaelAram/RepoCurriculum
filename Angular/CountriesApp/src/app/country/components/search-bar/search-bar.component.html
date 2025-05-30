@@ -1,0 +1,15 @@
+<div>
+  <img src="/search_icon.svg" alt="Search button" loading="eager" [width]="24" [height]="24" />
+  <input
+    type="search"
+    name="search-input"
+    id="search-input"
+    autocomplete="off"
+    autofocus
+    [placeholder]="placeholder()"
+    [formControl]="searchInput"
+  />
+</div>
+@if (isError()) {
+  <p>Sorry, this field is required to perform a search :(</p>
+}

@@ -1,0 +1,37 @@
+p {
+  font-size: large;
+  font-weight: 600;
+  color: #9290c3;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: #1b1a55;
+  color: white;
+  font-size: large;
+}
+
+thead th {
+  padding: 4px 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1b1a55a5;
+}
+
+td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 8px;
+  color: #9290c3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

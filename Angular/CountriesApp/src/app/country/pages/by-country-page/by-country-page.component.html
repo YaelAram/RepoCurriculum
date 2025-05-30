@@ -1,0 +1,14 @@
+<country-search-bar
+  (onSearch)="handleCountryChange($event)"
+  placeholder="Mexico"
+  [initialValue]="search() ?? ''"
+/>
+
+<country-table
+  [countries]="countriesRs.value()"
+  [isLoading]="countriesRs.isLoading()"
+  [isEmpty]="!this.countriesRs.hasValue() || this.countriesRs.value().length === 0"
+  [search]="country()"
+  [class.hscroll]="!countriesRs.isLoading()"
+  [class.no-scroll]="countriesRs.isLoading()"
+/>

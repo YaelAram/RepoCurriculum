@@ -1,8 +1,11 @@
-<div class="row mt-4">
-  <div class="col-3">
-    <share-sidebar />
-  </div>
-  <div class="col">
-    <router-outlet></router-outlet>
-  </div>
+<header>
+  <shared-navbar />
+</header>
+<div class="main-container hscroll">
+  <main class="hscroll">
+    <router-outlet />
+  </main>
+  <footer>
+    <shared-footer />
+  </footer>
 </div>

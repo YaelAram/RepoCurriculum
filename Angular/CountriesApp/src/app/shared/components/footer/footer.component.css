@@ -1,0 +1,16 @@
+h4,
+p {
+  text-align: center;
+  padding: 0 16px;
+}
+
+h4 {
+  color: white;
+  margin: 16px 0 8px;
+}
+
+p {
+  color: rgb(220, 220, 220);
+  margin: 8px 0 16px;
+  font-weight: 300;
+}

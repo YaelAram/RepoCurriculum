@@ -1,0 +1,23 @@
+<div class="search-bar">
+  <select
+    name="region-search"
+    id="region-search"
+    (change)="handleRegionChange(regionSelector.value)"
+    #regionSelector
+  >
+    <option value="africa">Africa</option>
+    <option value="americas">Americas</option>
+    <option value="asia">Asia</option>
+    <option value="europe">Europe</option>
+    <option value="oceania">Oceania</option>
+  </select>
+</div>
+
+<country-table
+  [countries]="countriesRs.value()"
+  [isLoading]="countriesRs.isLoading()"
+  [isEmpty]="!this.countriesRs.hasValue() || this.countriesRs.value().length === 0"
+  [search]="region()"
+  [class.hscroll]="!countriesRs.isLoading()"
+  [class.no-scroll]="countriesRs.isLoading()"
+/>
