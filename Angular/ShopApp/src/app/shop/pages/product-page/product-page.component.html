@@ -1,0 +1,36 @@
+@if (productRs.isLoading()) {
+  <mat-spinner />
+}
+
+@if (productRs.hasValue()) {
+  @let product = productRs.value();
+
+  <div class="info-container">
+    <shop-product-swiper [images]="product.images" [productName]="product.title" />
+    <section>
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <p>
+        <strong class="price">{{ product.price | currency }}</strong>
+        <br />
+        Just <strong>{{ product.stock }}</strong> units available
+      </p>
+      <div>
+        <h4>Available Sizes</h4>
+        <mat-chip-set>
+          @for (size of product.sizes; track size) {
+            <mat-chip>{{ size }}</mat-chip>
+          }
+        </mat-chip-set>
+      </div>
+      <div>
+        <h4>Tags</h4>
+        <mat-chip-set>
+          @for (tag of product.tags; track tag) {
+            <mat-chip>{{ tag | titlecase }}</mat-chip>
+          }
+        </mat-chip-set>
+      </div>
+    </section>
+  </div>
+}

@@ -1,0 +1,9 @@
+<div>
+  <mat-label>{{ label() }}</mat-label>
+  <mat-chip-listbox multiple [formControl]="control()">
+    @for (option of options(); track option) {
+      <mat-chip-option [value]="option">{{ option }}</mat-chip-option>
+    }
+  </mat-chip-listbox>
+</div>
+<mat-error>{{ getErrorMessage(control()) }}</mat-error>

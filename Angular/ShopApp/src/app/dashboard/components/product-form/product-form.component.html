@@ -1,0 +1,114 @@
+<div class="info-container">
+  <shop-product-swiper [productName]="product().title" [images]="swiperImages()" />
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <mat-icon matPrefix>abc</mat-icon>
+        <input type="text" matInput placeholder="Pullover Hoodie" formControlName="title" />
+        <mat-error>{{ getErrorMessage(form.controls.title) }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Slug</mat-label>
+        <mat-icon matPrefix>done</mat-icon>
+        <input type="text" matInput placeholder="Pullover_Hoodie" formControlName="slug" />
+        <mat-error>{{ getErrorMessage(form.controls.slug) }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <mat-icon matPrefix>description</mat-icon>
+      <textarea matInput placeholder="Pullover Hoodie description" formControlName="description"></textarea>
+      <mat-error>{{ getErrorMessage(form.controls.description) }}</mat-error>
+    </mat-form-field>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <mat-icon matPrefix>attach_money</mat-icon>
+        <input type="number" matInput placeholder="0" formControlName="price" />
+        <mat-error>{{ getErrorMessage(form.controls.price) }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Stock</mat-label>
+        <mat-icon matPrefix>numbers</mat-icon>
+        <input type="number" matInput placeholder="0" formControlName="stock" />
+        <mat-error>{{ getErrorMessage(form.controls.stock) }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <shared-input-chip label="Tags" placeholder="New tag..." [control]="form.controls.tags" />
+
+    <mat-form-field appearance="outline">
+      <mat-label>Gender Category</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-select formControlName="gender">
+        <mat-option value="kid">Kid</mat-option>
+        <mat-option value="men">Men</mat-option>
+        <mat-option value="unisex">Unisex</mat-option>
+        <mat-option value="women">Women</mat-option>
+      </mat-select>
+      <mat-error>{{ getErrorMessage(form.controls.gender) }}</mat-error>
+    </mat-form-field>
+
+    <shared-form-chip-selector
+      [control]="form.controls.sizes"
+      label="Sizes"
+      [options]="['XS', 'S', 'M', 'L', 'XL', 'XXL']"
+    />
+
+    <div class="input-file-container">
+      <div class="input-file">
+        <input
+          type="file"
+          accept="image/*"
+          #fileInput
+          (change)="handleFileChange(fileInput)"
+          hidden
+          multiple
+        />
+        <button mat-raised-button color="primary" (click)="fileInput.click()" type="button">
+          <mat-icon>upload</mat-icon> Upload
+        </button>
+        <span>{{ temporalImages().length }} file(s)</span>
+      </div>
+      <mat-error>{{ getErrorMessage(form.controls.images) }}</mat-error>
+      <div class="temporal-images-container">
+        @for (image of swiperImages(); track $index) {
+          <div class="image-tile">
+            <button
+              type="button"
+              mat-icon-button
+              title="Remove this image"
+              (click)="handleImageRemove(image)"
+            >
+              <mat-icon color="primary">cancel</mat-icon>
+            </button>
+            <img [src]="image | imageUrl" />
+          </div>
+        }
+      </div>
+    </div>
+
+    <button type="submit" mat-flat-button color="primary" class="button-spacer">
+      <mat-icon>{{ product().id ? "edit" : "add" }}</mat-icon>
+      {{ product().id ? "Update" : "Create" }}
+    </button>
+
+    @if (product().id !== "") {
+      <button
+        type="button"
+        mat-stroked-button
+        color="warn"
+        class="button-spacer"
+        (click)="handleDeleteItem()"
+      >
+        <mat-icon>delete</mat-icon>
+        Delete Product
+      </button>
+    }
+  </form>
+</div>

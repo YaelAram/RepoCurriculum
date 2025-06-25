@@ -1,0 +1,9 @@
+h1 {
+  text-align: center;
+  margin: 16px 0 32px;
+}
+
+div {
+  display: flex;
+  justify-content: flex-end;
+}

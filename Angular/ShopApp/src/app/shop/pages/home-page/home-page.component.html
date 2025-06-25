@@ -1,0 +1,15 @@
+<hgroup>
+  <h1>Everything you need</h1>
+  <p>Just in one place</p>
+</hgroup>
+
+<shared-paginator
+  [count]="productsRs.value()?.count ?? 0"
+  [pageSize]="limit()"
+  [page]="page() ?? 0"
+  (pageChange)="handlePageChange($event)"
+/>
+
+@if (productsRs.hasValue()) {
+  <shop-product-list [products]="productsRs.value().products" />
+}

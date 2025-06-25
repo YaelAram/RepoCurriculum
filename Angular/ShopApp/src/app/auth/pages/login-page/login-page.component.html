@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Hello There!</h1>
+    <form [formGroup]="logInForm" (ngSubmit)="handleSubmit()">
+      <shared-form-input
+        [control]="logInForm.controls.email"
+        placeholder="john@doe.com"
+        label="Email"
+        icon="mail"
+        type="email"
+      />
+
+      <shared-password-form-field
+        label="Password"
+        placeholder="12345678"
+        [control]="logInForm.controls.password"
+      />
+
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>login</mat-icon>
+        Log In
+      </button>
+    </form>
+
+    <div class="link-container">
+      <p>New here?</p>
+      <a mat-button routerLink="/auth/signup" color="primary">Sign Up here</a>
+    </div>
+
+    <div class="link-container"><a mat-button routerLink="/" color="primary">I prefer go to store</a></div>
+  </div>
+</div>

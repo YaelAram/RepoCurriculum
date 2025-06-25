@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Welcome to ItemShop App!</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="handleSubmit()">
+      <shared-form-input
+        [control]="signUpForm.controls.fullName"
+        placeholder="John Doe"
+        label="Full Name"
+        icon="person"
+        type="text"
+      />
+
+      <shared-form-input
+        [control]="signUpForm.controls.email"
+        placeholder="john@doe.com"
+        label="Email"
+        icon="mail"
+        type="email"
+      />
+
+      <shared-password-form-field
+        label="Password"
+        placeholder="12345678"
+        [control]="signUpForm.controls.password"
+      />
+
+      <shared-password-form-field
+        label="Confirm Password"
+        placeholder="12345678"
+        [control]="signUpForm.controls.confirmPassword"
+      />
+
+      <p class="form-error">{{ getErrorMessage(signUpForm) }}</p>
+
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>person</mat-icon>
+        Sign Up
+      </button>
+    </form>
+
+    <div class="link-container">
+      <p>Do you have an account?</p>
+      <a mat-button routerLink="/auth/login" color="primary">Log In here</a>
+    </div>
+
+    <div class="link-container"><a mat-button routerLink="/" color="primary">I prefer go to store</a></div>
+  </div>
+</div>

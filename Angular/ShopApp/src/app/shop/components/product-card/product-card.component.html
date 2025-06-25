@@ -1,0 +1,19 @@
+<mat-card appearance="outlined">
+  <img
+    mat-card-image
+    [src]="product().images[0] | imageUrl"
+    [alt]="'Photo of a' + product().title"
+    loading="lazy"
+  />
+  <mat-card-header>
+    <mat-card-title>
+      <a [routerLink]="['/product', product().slug]">{{ product().title }}</a>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ product().description | slice: 0 : 50 }}...</p>
+  </mat-card-content>
+  <mat-card-actions [align]="'end'">
+    <a [routerLink]="['/product', product().slug]" mat-button color="primary">View more...</a>
+  </mat-card-actions>
+</mat-card>

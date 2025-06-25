@@ -1,0 +1,12 @@
+<h1>{{ gender() | titlecase }} section</h1>
+
+<shared-paginator
+  [count]="productsRs.value()?.count ?? 0"
+  [pageSize]="limit()"
+  [page]="page() ?? 0"
+  (pageChange)="handlePageChange($event)"
+/>
+
+@if (productsRs.hasValue()) {
+  <shop-product-list [products]="productsRs.value().products" />
+}

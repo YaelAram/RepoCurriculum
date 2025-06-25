@@ -1,0 +1,82 @@
+mat-toolbar > span {
+  font-size: larger;
+  font-weight: 900;
+}
+
+main {
+  padding: 16px 16px 32px;
+}
+
+main > h1 {
+  margin: 0 0 16px;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+/* Move the content down so that it won't be hidden by the toolbar */
+mat-sidenav {
+  position: fixed;
+  left: 0;
+
+  padding-top: 3.5rem;
+  transition: width 0.3s ease;
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+
+  .entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem;
+  }
+}
+
+mat-toolbar > a {
+  font-size: large;
+  font-weight: 600;
+}
+
+/* Move the content down so that it won't be hidden by the toolbar */
+mat-sidenav-content {
+  padding-top: 3.5rem;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+}
+
+.fit {
+  width: fit-content;
+}
+
+.active {
+  background-color: rgb(164, 160, 160);
+}
+
+a {
+  text-decoration: none;
+}
+
+a > mat-icon {
+  color: #2c2c2c;
+}
+
+a > span {
+  color: black;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

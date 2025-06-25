@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggle(sidenav)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/" mat-button>{{ title() }}</a>
+  <span class="spacer"></span>
+  <div class="user-controls">
+    @if (isAutheticated()) {
+      <span>{{ userName() }}</span>
+      @if (isAdmin()) {
+        <a routerLink="/management/products" mat-button>Dashboard</a>
+      }
+      <button type="button" mat-button (click)="logOut()">
+        {{ buttonAction() }}
+      </button>
+    } @else {
+      <a routerLink="/auth/login" mat-button>{{ buttonAction() }}</a>
+    }
+  </div>
+</mat-toolbar>
+<mat-sidenav-container autosize="true">
+  <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'" [opened]="!isMobile()" class="fit">
+    <mat-nav-list>
+      @for (item of navItems(); track item.url) {
+        <a
+          [routerLink]="item.url"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="entry"
+        >
+          <mat-icon>{{ item.icon }}</mat-icon>
+          @if (!isCollapsed()) {
+            <span>{{ item.title }}</span>
+          }
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

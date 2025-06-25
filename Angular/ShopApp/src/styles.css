@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100dvh;
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+hgroup h1,
+hgroup p {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+hgroup h1 {
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+hgroup p {
+  font-size: large;
+}
+
+/* Auth Styles */
+.container {
+  height: 100dvh;
+  background-color: #3f51b5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+
+  width: 25dvw;
+}
+
+.form-container > h1 {
+  text-align: center;
+  margin: 8px 0 32px;
+}
+
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-container {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-container > p {
+  margin: 0;
+}

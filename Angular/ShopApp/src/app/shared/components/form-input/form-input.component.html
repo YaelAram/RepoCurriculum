@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label() }}</mat-label>
+  <mat-icon matPrefix>{{ icon() }}</mat-icon>
+  <input [type]="type()" matInput [placeholder]="placeholder()" [formControl]="control()" />
+  <mat-error>{{ getErrorMessage(control()) }}</mat-error>
+</mat-form-field>

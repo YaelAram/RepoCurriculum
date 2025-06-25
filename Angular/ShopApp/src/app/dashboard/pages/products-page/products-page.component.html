@@ -1,0 +1,20 @@
+<h1>Product Management</h1>
+
+<div>
+  <a mat-flat-button color="primary" routerLink="/management/create-product">
+    <mat-icon>add</mat-icon>
+    Create Product
+  </a>
+</div>
+
+<shared-paginator
+  [count]="productsRs.value()?.count ?? 0"
+  [pageSize]="limit()"
+  [page]="page() ?? 0"
+  [pageSizeOptions]="[25, 50]"
+  (pageChange)="handlePageChange($event)"
+/>
+
+@if (productsRs.hasValue()) {
+  <dashboard-product-list [products]="productsRs.value().products" />
+}

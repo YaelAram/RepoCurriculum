@@ -1,0 +1,9 @@
+mat-labe {
+  margin-bottom: 4px;
+}
+
+div {
+  border-radius: 16px;
+  outline: gray solid 1px;
+  padding: 4px 16px;
+}

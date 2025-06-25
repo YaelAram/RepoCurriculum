@@ -1,0 +1,13 @@
+<mat-tab-group headerPosition="below" dynamicHeight mat-stretch-tabs>
+  @for (image of images(); track $index; let i = $index) {
+    <mat-tab [label]="(i + 1).toString()">
+      <img [src]="image | imageUrl" [alt]="productName() + ' Image ' + (i + 1)" />
+    </mat-tab>
+  } @empty {
+    <mat-tab label="1">
+      <div>
+        <p>No images provided</p>
+      </div>
+    </mat-tab>
+  }
+</mat-tab-group>

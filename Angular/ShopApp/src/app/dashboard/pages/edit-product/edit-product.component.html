@@ -1,0 +1,11 @@
+@if (productRs.isLoading()) {
+  <mat-progress-spinner />
+}
+
+@if (productRs.hasValue()) {
+  <dashboard-product-form
+    [product]="productRs.value()"
+    (formSubmitted)="handleSubmit($event)"
+    (itemDelete)="handleDelete()"
+  />
+}

@@ -1,0 +1,9 @@
+@if (products().length > 0) {
+  <div>
+    @for (item of products(); track item.id) {
+      <shop-product-card [product]="item" />
+    }
+  </div>
+} @else {
+  <p>Sorry, no items found.</p>
+}

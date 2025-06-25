@@ -1,0 +1,32 @@
+p {
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+div {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 16px;
+}
+
+@media screen and (width > 750px) {
+  div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width > 1024px) {
+  div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (width > 1280px) {
+  div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
